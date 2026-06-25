@@ -201,6 +201,11 @@ font-family: 'Inter', sans-serif;
 .project-links {
   margin-top: 16px;
 }
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
     /* FOOTER */
     footer { border-top:1px solid var(--border);padding:2rem 4rem;display:flex;align-items:center; justify-content: center; font-family:'Inter', sans-serif;font-size:0.72rem;color:var(--muted); }
 
@@ -354,7 +359,7 @@ font-family: 'Inter', sans-serif;
     <div class="about-text reveal">
       <p>I'm a motivated <strong>Computer Science student</strong> at Universiti Teknologi Malaysia (UTM · MJIIT), majoring in Software Engineering. I thrive at the intersection of design and logic — crafting systems that are as beautiful as they are functional.</p>
       <p>With hands-on experience in <strong>full-stack web development</strong>, I've built end-to-end applications spanning secure authentication, health tracking, and financial management — all deployed in production environments.</p>
-      <p>Currently interning at <strong>Professional Gyan</strong>'s Research &amp; Innovation Department, where I bridge academic foundations with real industry impact.</p>
+      <p>I had done an internship at <strong>Professional Gyan</strong>'s Research &amp; Innovation Department, where I bridge academic foundations with real industry impact.</p>
       <div class="about-stats">
         <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Projects Built</div></div>
         <div class="stat-card"><div class="stat-num">2026</div><div class="stat-label">Active Intern</div></div>
@@ -415,68 +420,149 @@ font-family: 'Inter', sans-serif;
   </div>
   <div class="projects-grid">
 
-    <div class="project-card reveal">
-      <div class="project-arrow">↗</div>
-      <div class="project-num">01</div>
-      <div class="project-role">Full Stack Developer</div>
-      <div class="project-name">DHL Incident Reporting & Resolution System</div>
-      <div class="project-desc">A real-world incident management platform built in collaboration with DHL Global Finance Services – Asia Pacific as part of the DAC 3.0 Industry Challenge. Features role-based authentication, live incident dashboard, RPA execution logs, AI-powered suggestions, and automated email summaries.</div>
-      <div class="project-stack">
-        <span class="stack-tag">HTML5</span>
-        <span class="stack-tag">CSS3</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">Supabase</span>
-        <span class="stack-tag">UiPath</span>
-        <span class="stack-tag">EmailJS</span>
-      </div>
-      <div class="project-links">
-  <a href="https://dhl-incident-system.netlify.app/" target="_blank" class="project-link">🌐 Click here for Live Demo</a>
+
+<div class="project-card reveal">
+  <div class="project-arrow">↗</div>
+  <div class="project-num">01</div>
+  <div class="project-role">Full Stack Developer</div>
+  <div class="project-name">DHL Incident Reporting & Resolution System</div>
+
+  <div class="project-desc">
+    A real-world incident management platform built in collaboration with DHL Global Finance Services – Asia Pacific as part of the DAC 3.0 Industry Challenge. Features role-based authentication, live incident dashboard, RPA execution logs, AI-powered suggestions, and automated email summaries.
+  </div>
+
+  <div class="project-stack">
+    <span class="stack-tag">HTML5</span>
+    <span class="stack-tag">CSS3</span>
+    <span class="stack-tag">JavaScript</span>
+    <span class="stack-tag">Supabase</span>
+    <span class="stack-tag">UiPath</span>
+    <span class="stack-tag">EmailJS</span>
+  </div>
+
+  <div class="project-links">
+    <a href="https://dhl-incident-system.netlify.app/"
+       target="_blank"
+       class="project-link">
+       🌐 Click here for Live Demo
+    </a>
+  </div>
+
+  <div class="project-links">
+    <a href="https://github.com/KANIZ6228/DHL-Incident-System"
+       target="_blank"
+       class="project-link">
+
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="16"
+           height="16"
+           fill="currentColor"
+           viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8a8.013 8.013 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.66 7.66 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+
+      Repository
+    </a>
+  </div>
 </div>
-    </div>
+`<div class="project-card reveal">
+  <div class="project-arrow">↗</div>
+  <div class="project-num">02</div>
+  <div class="project-role">Machine Learning Developer</div>
+  <div class="project-name">FruityPy — AI-Powered Fruit Freshness Detection</div>
 
-    <div class="project-card reveal">
-      <div class="project-arrow">↗</div>
-      <div class="project-num">02</div>
-      <div class="project-role">Lead Developer</div>
-      <div class="project-name">Protectify — Emergency Contact Web App</div>
-      <div class="project-desc">A secure web-based platform enabling users to store emergency contacts and trigger alerts in critical situations. Features full production deployment with responsive design across all devices.</div>
-      <div class="project-stack">
-        <span class="stack-tag">PHP</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">CSS</span>
-        <span class="stack-tag">InfinityFree</span>
-      </div>
-    </div>
+  <div class="project-desc">
+    An intelligent fruit freshness classification system that uses machine learning and computer vision techniques to identify fresh and spoiled fruits from images. Developed to assist quality assessment and reduce food waste through automated prediction and real-time analysis.
+  </div>
 
-    <div class="project-card reveal">
-      <div class="project-arrow">↗</div>
-      <div class="project-num">03</div>
-      <div class="project-role">Developer · SRS Academic Project</div>
-      <div class="project-name">Payment Tracking System</div>
-      <div class="project-desc">Designed and built a complete Payment Tracking System for SK-Sentul-02, a Malaysian government primary school. Produced a full SRS alongside the application with UML system modelling.</div>
-      <div class="project-stack">
-        <span class="stack-tag">Next.js</span>
-        <span class="stack-tag">Supabase</span>
-        <span class="stack-tag">UML</span>
-      </div>
-    </div>
+  <div class="project-stack">
+    <span class="stack-tag">Python</span>
+    <span class="stack-tag">Machine Learning</span>
+    <span class="stack-tag">Computer Vision</span>
+    <span class="stack-tag">TensorFlow</span>
+    <span class="stack-tag">OpenCV</span>
+  </div>
 
-    <div class="project-card reveal">
-      <div class="project-arrow">↗</div>
-      <div class="project-num">04</div>
-      <div class="project-role">Backend Developer</div>
-      <div class="project-name">PersonBMI — Dynamic Health Tracking System</div>
-      <div class="project-desc">A Java-based web application to calculate and track BMI over time. Built backend logic using Java Servlets with JDBC database integration, focused on reliability and efficient SQL queries.</div>
-      <div class="project-stack">
-        <span class="stack-tag">Java Servlets</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">JDBC</span>
-        <span class="stack-tag">Apache Tomcat</span>
-      </div>
-    </div>
+  <div class="project-links">
+    <a href="https://github.com/KANIZ6228/FruitiePy" class="project-link" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8a8.013 8.013 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.66 7.66 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      Repository
+    </a>
+  </div>
+</div>
+  </div>
+
+
+
+<!-- Project 03 -->
+<div class="project-card reveal">
+  <div class="project-arrow">↗</div>
+  <div class="project-num">03</div>
+  <div class="project-role">Lead Developer</div>
+  <div class="project-name">Protectify — Emergency Contact Web App</div>
+
+  <div class="project-desc">
+    A secure web-based platform enabling users to store emergency contacts and trigger alerts during critical situations. Features responsive design, user authentication, and full production deployment for accessibility across devices.
+  </div>
+
+  <div class="project-stack">
+    <span class="stack-tag">PHP</span>
+    <span class="stack-tag">MySQL</span>
+    <span class="stack-tag">JavaScript</span>
+    <span class="stack-tag">CSS</span>
+    <span class="stack-tag">InfinityFree</span>
+  </div>
+  </div>
+</div>
+
+<!-- Project 04 -->
+<div class="project-card reveal">
+  <div class="project-arrow">↗</div>
+  <div class="project-num">04</div>
+  <div class="project-role">Developer · SRS Academic Project</div>
+  <div class="project-name">Payment Tracking System</div>
+
+  <div class="project-desc">
+    Designed and developed a Payment Tracking System for SK Sentul 2 to streamline PTA financial management. Produced a comprehensive Software Requirements Specification (SRS) including UML diagrams, use cases, and system modelling.
+  </div>
+
+  <div class="project-stack">
+    <span class="stack-tag">Next.js</span>
+    <span class="stack-tag">Supabase</span>
+    <span class="stack-tag">UML</span>
+  </div>
+
+  
+   
+  </div>
+</div>
+
+<!-- Project 05 -->
+<div class="project-card reveal">
+  <div class="project-arrow">↗</div>
+  <div class="project-num">05</div>
+  <div class="project-role">Backend Developer</div>
+  <div class="project-name">PersonBMI — Dynamic Health Tracking System</div>
+
+  <div class="project-desc">
+    A Java-based web application for calculating and tracking Body Mass Index (BMI) over time. Implemented backend functionality using Java Servlets and JDBC with MySQL database integration, focusing on efficient data management and performance.
+  </div>
+
+  <div class="project-stack">
+    <span class="stack-tag">Java Servlets</span>
+    <span class="stack-tag">MySQL</span>
+    <span class="stack-tag">JDBC</span>
+    <span class="stack-tag">Apache Tomcat</span>
+  </div>
+
+
 
   </div>
+</div>
+
+
 </section>
 
 <!-- EXPERIENCE -->
