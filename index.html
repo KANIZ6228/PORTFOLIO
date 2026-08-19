@@ -95,11 +95,39 @@
     .about-grid { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto; }
     .about-text p { font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:1.2rem; }
     .about-text p strong { color:var(--text);font-weight:500; }
-    .about-stats { display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem; }
-    .stat-card { background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.4rem;transition:border-color .3s,transform .3s; }
-    .stat-card:hover { border-color:var(--cyan);transform:translateY(-3px); }
-    .stat-num { font-family: 'Inter', sans-serif;font-size:2rem;font-weight:800;color:var(--cyan); }
-    .stat-label { font-family: 'Inter', sans-serif;font-size:0.7rem;color:var(--muted);margin-top:0.2rem; }
+    .about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.3rem;
+  transition: border-color .3s, transform .3s;
+}
+
+.stat-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.stat-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cyan);
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
     .about-visual { position:relative; }
     .code-window { background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--glow); }
     .code-titlebar { background:var(--surface2);padding:0.8rem 1.2rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid var(--border); }
@@ -357,55 +385,119 @@
     <h2 class="section-title">About <em>Me</em></h2>
     <div class="section-divider"></div>
   </div>
+
   <div class="about-grid">
+
+    <!-- LEFT: ABOUT TEXT -->
     <div class="about-text reveal">
-      <p>I'm a motivated <strong>Computer Science student</strong> at Universiti Teknologi Malaysia (UTM · MJIIT), majoring in Software Engineering. I thrive at the intersection of design and logic — crafting systems that are as beautiful as they are functional.</p>
-      <p>With hands-on experience in <strong>full-stack web development</strong>, I've built end-to-end applications spanning secure authentication,AI-Agent, health tracking, and financial management — all deployed in production environments.</p>
-      <p>I had done an internship at <strong>Professional Gyan</strong>'s Research &amp; Innovation Department, where I bridge academic foundations with real industry impact.</p>
+
+      <p>
+        I'm a motivated <strong>Computer Science student</strong> at
+        Universiti Teknologi Malaysia (UTM · MJIIT), majoring in Software
+        Engineering. I enjoy turning ideas into practical digital solutions
+        and exploring the intersection of software engineering, artificial
+        intelligence, and user-centered design.
+      </p>
+
+      <p>
+        Through academic and personal projects, I've gained hands-on
+        experience in <strong>full-stack development, AI/ML, RAG systems,
+        and intelligent automation</strong>.Through academic and personal projects, I've gained hands-on experience in full-stack development, AI/ML, RAG systems, and intelligent automation. I've built applications ranging from AI-powered document intelligence and machine learning systems to real-world incident management and financial tracking platforms.
+      </p>
+
+      <p>
+        During my internship with
+        <strong>Professional Gyan's Research &amp; Innovation Department</strong>,
+        I gained exposure to a professional working environment and
+        strengthened my ability to apply academic knowledge to practical
+        problems.
+      </p>
+
+      <!-- STATS -->
       <div class="about-stats">
-        <div class="stat-card"><div class="stat-num">8+</div><div class="stat-label">Projects Built</div></div>
-<div class="stat-card">
-  <div class="stat-num">5+</div>
-  <div class="stat-label">AI & Software Projects</div>
-</div>
 
-<div class="stat-card">
-  <div class="stat-num">3+</div>
-  <div class="stat-label">AI-Focused Projects</div>
-</div>
+        <div class="stat-card">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
 
-<div class="stat-card">
-  <div class="stat-num">2+</div>
-  <div class="stat-label">Industry / Real-World Projects</div>
-</div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">AI &amp; Software Projects</div>
+        </div>
 
-<div class="stat-card">
-  <div class="stat-num">2027</div>
-  <div class="stat-label">Expected Graduation</div>
-</div>
+        <div class="stat-card">
+          <div class="stat-num">1</div>
+          <div class="stat-label">Industry Internship</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-num">2027</div>
+          <div class="stat-label">Expected Graduation</div>
+        </div>
+
+      </div>
     </div>
+
+    <!-- RIGHT: CODE WINDOW -->
     <div class="about-visual reveal">
+
       <div class="code-window" style="animation:float 5s ease-in-out infinite;">
+
         <div class="code-titlebar">
-          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
           <div class="code-fn">kaniz.js</div>
         </div>
+
         <div class="code-body">
-          <span class="c-kw">const</span> <span class="c-var">developer</span> = {<br>
-          &nbsp;&nbsp;<span class="c-fn">name</span>: <span class="c-str">"Kaniz Fatema"</span>,<br>
-          &nbsp;&nbsp;<span class="c-fn">role</span>: <span class="c-str">"Full Stack Developer"</span>,<br>
-          &nbsp;&nbsp;<span class="c-fn">location</span>: <span class="c-str">"Kuala Lumpur 🇲🇾"</span>,<br>
-          &nbsp;&nbsp;<span class="c-fn">openTo</span>: [<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Internships"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Junior Roles"</span>,<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Freelance"</span><br>
+
+          <span class="c-kw">const</span>
+          <span class="c-var">developer</span> = {<br>
+
+          &nbsp;&nbsp;<span class="c-fn">name</span>:
+          <span class="c-str">"Kaniz Fatema"</span>,<br>
+
+          &nbsp;&nbsp;<span class="c-fn">role</span>:
+          <span class="c-str">"Software Engineering Student"</span>,<br>
+
+          &nbsp;&nbsp;<span class="c-fn">focus</span>: [<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Artificial Intelligence"</span>,<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Machine Learning"</span>,<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Full-Stack Development"</span>,<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Intelligent Automation"</span><br>
+
           &nbsp;&nbsp;],<br>
-          &nbsp;&nbsp;<span class="c-fn">status</span>: <span class="c-obj">() =></span> <span class="c-str">"Available 🟢"</span><br>
+
+          &nbsp;&nbsp;<span class="c-fn">location</span>:
+          <span class="c-str">"Kuala Lumpur 🇲🇾"</span>,<br>
+
+          &nbsp;&nbsp;<span class="c-fn">openTo</span>: [<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Internships"</span>,<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Junior Roles"</span>,<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Freelance"</span><br>
+
+          &nbsp;&nbsp;],<br>
+
+          &nbsp;&nbsp;<span class="c-fn">status</span>:
+          <span class="c-str">"Available 🟢"</span><br>
+
           };<br><br>
+
           <span class="c-cmt">// Always building. Always learning.</span>
+
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -419,9 +511,9 @@
     </div>
     <div class="skills-grid">
       <div class="skill-group reveal"><div class="skill-group-icon">🎨</div><div class="skill-group-title">Frontend</div><div class="skill-tags"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Next.js</span><span class="skill-tag">React</span><span class="skill-tag">Responsive UI</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">⚙️</div><div class="skill-group-title">Backend</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">PHP</span><span class="skill-tag">Java</span><span class="skill-tag">Java Servlets</span><span class="skill-tag">REST APIs</span><span class="skill-tag">REST APIs</span></div></div>
+      <div class="skill-group reveal"><div class="skill-group-icon">⚙️</div><div class="skill-group-title">Backend</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">PHP</span><span class="skill-tag">Java</span><span class="skill-tag">Java Servlets</span><span class="skill-tag">REST APIs</span></div></div>
       <div class="skill-group reveal"><div class="skill-group-icon">🗄️</div><div class="skill-group-title">Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">Supabase</span><span class="skill-tag">JDBC</span><span class="skill-tag">DB Design</span><span class="skill-tag">Vector Databases</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">🛠️</div><div class="skill-group-title">Tools</div><div class="skill-tags"><span class="skill-tag">VS Code</span><span class="skill-tag">GitHub</span><span class="skill-tag">XAMPP</span><span class="skill-tag">Apache Tomcat</span><span class="skill-tag">InfinityFree</span>UiPath</div></div>
+      <div class="skill-group reveal"><div class="skill-group-icon">🛠️</div><div class="skill-group-title">Tools</div><div class="skill-tags"><span class="skill-tag">VS Code</span><span class="skill-tag">GitHub</span><span class="skill-tag">XAMPP</span><span class="skill-tag">Apache Tomcat</span><span class="skill-tag">InfinityFree</span><span class="skill-tag">UiPath</span></div></div>
       <div class="skill-group reveal"><div class="skill-group-icon">📊</div><div class="skill-group-title">Data &amp; BI</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">UML Modelling</span><span class="skill-tag">SRS Design</span><span class="skill-tag">API Design</span></div></div>
       <div class="skill-group reveal"><div class="skill-group-icon">🤝</div><div class="skill-group-title">Soft Skills</div><div class="skill-tags"><span class="skill-tag">Problem-Solving</span><span class="skill-tag">Teamwork</span><span class="skill-tag">Time Management</span><span class="skill-tag">Adaptability</span></div></div>
     </div>
@@ -606,10 +698,14 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     AI-Powered Document Intelligence System
   </div>
 
-  <div class="project-desc">
-    Developed a Retrieval-Augmented Generation (RAG) system that transforms
-    doDeveloped a full-stack Retrieval-Augmented Generation (RAG) application that transforms PDF and TXT documents into an interactive AI knowledge base. Implemented document extraction, text chunking, embedding generation, vector similarity search, and context-grounded LLM responses with source attribution. Built a FastAPI backend and React frontend to provide an end-to-end document question-answering experience.
-  </div>
+<div class="project-desc">
+  Developed a full-stack Retrieval-Augmented Generation (RAG) application
+  that transforms PDF and TXT documents into an interactive AI knowledge
+  base. Implemented document extraction, text chunking, embedding
+  generation, vector similarity search, and context-grounded LLM responses
+  with source attribution. Built a FastAPI backend and React frontend to
+  provide an end-to-end document question-answering experience.
+</div>
 
   <div class="project-stack">
     <span class="stack-tag">Python</span>
