@@ -252,6 +252,13 @@
     .footer-links a { color:var(--muted);transition:color .2s; }
     .footer-links a:hover { color:var(--cyan); }
 
+    /* PROJECT FILTERS */
+    .project-filters { margin-bottom: 2.5rem; }
+    .filter-btn { font-family: 'Inter', sans-serif;font-size:0.75rem;color:var(--muted);background:transparent;border:1px solid var(--border);padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:0.05em;text-transform:uppercase; }
+    .filter-btn:hover { border-color:var(--cyan);color:var(--cyan); }
+    .filter-btn.active { background:var(--cyan);color:var(--bg);border-color:var(--cyan); }
+    .project-card.hidden { display:none; }
+
     /* ANIMATIONS */
     @keyframes fadeUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
     @keyframes fadeIn { to{opacity:1;} }
@@ -288,8 +295,8 @@
       .nav-links.open a { font-size: 1.1rem; color: var(--text); }
       .nav-cta { display: none; }
       .hamburger { display: flex; }
-      .nav-cta-mobile { display: block !important; margin-top: 1rem; }
-      .nav-cta-mobile .nav-cta { display: block; width: 80%; max-width: 280px; }
+      .nav-links.open .nav-cta-mobile { display: block; margin-top: 1rem; }
+      .nav-links.open .nav-cta-mobile .nav-cta { display: block; width: 80%; max-width: 280px; }
 
       #hero { padding: 5.5rem 1.2rem 3rem; min-height: 100svh; align-items: flex-start; }
       .hero-content { width: 100%; max-width: 100%; }
@@ -354,7 +361,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li class="nav-cta-mobile"><a href="#contact" class="nav-cta" style="display:block;width:100%;text-align:center;">Hire Me</a></li>
+    <li class="nav-cta-mobile" style="display:none;"><a href="#contact" class="nav-cta" style="display:block;width:100%;text-align:center;">Hire Me</a></li>
   </ul>
   <button class="nav-cta" onclick="window.location.href='#contact'">Hire Me</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -378,6 +385,7 @@
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="Kaniz_Fatema_Resume.pdf" class="btn-outline" download>📄 Download Resume</a>
     </div>
     <div class="hero-badges">
 <span class="badge">Python</span>
@@ -594,9 +602,17 @@
     </div>
   </div>
 
+  <!-- PROJECT FILTER TABS -->
+  <div class="project-filters reveal" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ai">AI / ML</button>
+    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+    <button class="filter-btn" data-filter="academic">Academic</button>
+  </div>
+
   <div class="projects-grid">
 <!-- Project 01 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">01</div>
@@ -647,7 +663,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 02 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="fullstack">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">02</div>
@@ -713,7 +729,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 </div>
 
 <!-- Project 03 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">03</div>
@@ -766,7 +782,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 04 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">04</div>
@@ -822,7 +838,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 </div>
 
 <!-- Project 05 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">05</div>
@@ -876,7 +892,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 06 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="academic fullstack">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">06</div>
@@ -929,7 +945,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 07 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="fullstack">
   <div class="project-arrow">↗</div>
   <div class="project-num">07</div>
   <div class="project-role">Lead Developer</div>
@@ -1004,6 +1020,51 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </section>
 
+<!-- LEARNING & CERTIFICATIONS -->
+<section id="learning">
+  <div class="section-header reveal">
+    <div class="section-tag">// growth mindset</div>
+    <h2 class="section-title">Currently <em>Learning</em> & Certifications</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="learning-grid">
+    <div class="learning-card reveal">
+      <div class="learning-icon">🎓</div>
+      <div class="learning-title">Generative AI & LLMs</div>
+      <div class="learning-desc">Advanced RAG patterns, agent frameworks (LangGraph, AutoGen), fine-tuning, and production LLM deployment</div>
+      <span class="learning-status">In Progress</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">☁️</div>
+      <div class="learning-title">Cloud & MLOps</div>
+      <div class="learning-desc">AWS/GCP for ML pipelines, Docker, CI/CD for ML models, model monitoring & drift detection</div>
+      <span class="learning-status">In Progress</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">🔧</div>
+      <div class="learning-title">System Design & Architecture</div>
+      <div class="learning-desc">Scalable system design, distributed systems, microservices patterns, event-driven architectures</div>
+      <span class="learning-status">Studying</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">📜</div>
+      <div class="learning-title">Relevant Coursework</div>
+      <div class="learning-desc">Data Structures & Algorithms, Database Systems, Software Engineering, Computer Networks, AI/ML Fundamentals</div>
+      <span class="learning-status">Completed</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .learning-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto; }
+  .learning-card { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;position:relative; }
+  .learning-card:hover { border-color:rgba(0,229,255,0.3);transform:translateY(-4px); }
+  .learning-icon { font-size:2rem;margin-bottom:1rem; }
+  .learning-title { font-family: 'Inter', sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.75rem; }
+  .learning-desc { font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem; }
+  .learning-status { font-family: 'Inter', sans-serif;font-size:0.65rem;color:var(--cyan);background:rgba(0,229,255,0.1);border:1px solid var(--cyan);padding:0.3rem 0.8rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em; }
+</style>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner reveal">
@@ -1014,10 +1075,6 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
       <a href="mailto:kaniz6228@gmail.com?subject=Internship%20Inquiry&body=Hi%20Kaniz%2C%0A%0AI%27m%20reaching%20out%20regarding%20..." class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         kaniz6228@gmail.com
-      </a>
-      <a href="https://calendly.com/your-link" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Schedule a Call
       </a>
       <a href="https://linkedin.com/in/kaniz6228" target="_blank" class="contact-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1124,6 +1181,20 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     let cur='';
     sections.forEach(s=>{if(window.scrollY>=s.offsetTop-200)cur=s.id;});
     navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--cyan)':'';});
+  });
+
+  // PROJECT FILTER
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(card=>{
+        const cats=card.dataset.category.split(' ');
+        if(filter==='all' || cats.includes(filter)) card.classList.remove('hidden');
+        else card.classList.add('hidden');
+      });
+    });
   });
 </script>
 </body>
