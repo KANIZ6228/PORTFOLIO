@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kaniz Fatema </title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -14,13 +14,13 @@
       --bg2: #0a1220;
       --surface: #0f1b2d;
       --surface2: #152238;
-      
+      --cyan: #00e5ff;
       --teal: #00ffc8;
       --gold: #ffd166;
       --text: #e8f0fe;
       --muted: #7a9cc0;
       --border: rgba(0,229,255,0.15);
-      --glow: 0 0 30px rgba(0,229,255,0.2);
+      --glow: 0 0 30px rgba(0,229,255,0s.2);
     }
 
     html { scroll-behavior: smooth; }
@@ -170,11 +170,22 @@
     .project-num {font-family: 'Inter', sans-serif;font-size:3.5rem;font-weight:800;color:rgba(0,229,255,0.08);line-height:1;margin-bottom:0.5rem; }
     .project-role { font-family: 'Inter', sans-serif;font-size:0.68rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.8rem; }
     .project-name { font-family: 'Inter', sans-serif;font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:1rem;line-height:1.2; }
-    .project-desc { font-size:0.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem; }
+    .project-desc { font-size:0.88rem;color:var(--muted);line-height:1.75;margin-bottom:1rem; }
+    .project-outcome { font-size:0.8rem;color:var(--gold);font-weight:500;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem; }
     .project-stack { display:flex;flex-wrap:wrap;gap:0.4rem; }
     .stack-tag { font-family: 'Inter', sans-serif;font-size:0.68rem;color:var(--cyan);border:1px solid rgba(0,229,255,0.2);padding:0.2rem 0.6rem;border-radius:2px;background:rgba(0,229,255,0.04); }
     .project-arrow { position:absolute;top:1.5rem;right:1.5rem;width:32px;height:32px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:0.9rem;transition:all .2s; }
     .project-card:hover .project-arrow { border-color:var(--cyan);color:var(--cyan);transform:rotate(45deg); }
+
+    /* HIGHLIGHT ROW */
+    .highlight-row { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto 4rem; }
+    .highlight-card { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;text-align:center; }
+    .highlight-card:hover { border-color:rgba(0,229,255,0.3);transform:translateY(-4px); }
+    .highlight-icon { font-size:2.5rem;margin-bottom:1rem; }
+    .highlight-title { font-family: 'Inter', sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.5rem; }
+    .highlight-desc { font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem; }
+    .highlight-link { font-family: 'Inter', sans-serif;font-size:0.8rem;color:var(--cyan);text-decoration:none;border:1px solid var(--cyan);padding:0.6rem 1.2rem;border-radius:6px;transition:all .2s;display:inline-block; }
+    .highlight-link:hover { background:var(--cyan);color:var(--bg); }
 
     /* EXPERIENCE */
     #experience { padding:7rem 4rem;background:rgba(15,27,45,0.4); }
@@ -207,36 +218,46 @@
     .contact-link { font-family: 'Inter', sans-serif;font-size:0.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:0.8rem 1.2rem;border-radius:6px;background:var(--surface);display:flex;align-items:center;gap:0.7rem;transition:all .25s; }
     .contact-link:hover { color:var(--cyan);border-color:var(--cyan);transform:translateY(-2px); }
     .contact-link svg { width:16px;height:16px;flex-shrink:0; }
-  /* project link */
- 
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--cyan);
-  text-decoration: none;
-  border: 1px solid var(--cyan);
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.2s;
-}
+    /* project link */
+  
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cyan);
+    text-decoration: none;
+    border: 1px solid var(--cyan);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
 
-.project-link:hover {
-  background: var(--cyan);
-  color: var(--bg);
-}
+  .project-link:hover {
+    background: var(--cyan);
+    color: var(--bg);
+  }
 
-.project-links {
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
+  .project-links {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
     /* FOOTER */
-    footer { border-top:1px solid var(--border);padding:2rem 4rem;display:flex;align-items:center; justify-content: center; font-family:'Inter', sans-serif;font-size:0.72rem;color:var(--muted); }
+    footer { border-top:1px solid var(--border);padding:2rem 4rem;display:flex;flex-direction:column;align-items:center;gap:1rem;font-family:'Inter', sans-serif;font-size:0.72rem;color:var(--muted); }
+    .footer-links { display:flex;gap:1.5rem; }
+    .footer-links a { color:var(--muted);transition:color .2s; }
+    .footer-links a:hover { color:var(--cyan); }
+
+    /* PROJECT FILTERS */
+    .project-filters { margin-bottom: 2.5rem; }
+    .filter-btn { font-family: 'Inter', sans-serif;font-size:0.75rem;color:var(--muted);background:transparent;border:1px solid var(--border);padding:0.5rem 1.2rem;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:0.05em;text-transform:uppercase; }
+    .filter-btn:hover { border-color:var(--cyan);color:var(--cyan); }
+    .filter-btn.active { background:var(--cyan);color:var(--bg);border-color:var(--cyan); }
+    .project-card.hidden { display:none; }
 
     /* ANIMATIONS */
     @keyframes fadeUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
@@ -268,12 +289,14 @@
         display: none;
         position: fixed; inset: 0; top: 57px;
         background: var(--bg2); z-index: 99;
-        flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+        flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;
       }
       .nav-links.open { display: flex; }
       .nav-links.open a { font-size: 1.1rem; color: var(--text); }
       .nav-cta { display: none; }
       .hamburger { display: flex; }
+      .nav-links.open .nav-cta-mobile { display: block; margin-top: 1rem; }
+      .nav-links.open .nav-cta-mobile .nav-cta { display: block; width: 80%; max-width: 280px; }
 
       #hero { padding: 5.5rem 1.2rem 3rem; min-height: 100svh; align-items: flex-start; }
       .hero-content { width: 100%; max-width: 100%; }
@@ -338,6 +361,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li class="nav-cta-mobile" style="display:none;"><a href="#contact" class="nav-cta" style="display:block;width:100%;text-align:center;">Hire Me</a></li>
   </ul>
   <button class="nav-cta" onclick="window.location.href='#contact'">Hire Me</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -348,19 +372,20 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-content">
-    <div class="hero-tag">Available for Internships &amp; Junior Roles</div>
+    <div class="hero-tag">Available for Internships & Junior Roles</div>
     <h1 class="hero-name">
-     <span class="line1">Kaniz</span>
-      <span class="line2">Fatema</span>
+      <span class="line1">AI & Full-Stack Developer</span>
+      <span class="line2">Building Intelligent Applications</span>
     </h1>
     <p class="hero-sub">
-      <strong>Bachelor of Computer Science (Software Engineering) — UTM · MJIIT, Kuala Lumpur</strong>
-     Building AI-powered and full-stack applications with a focus on intelligent automation, machine learning, and user-centered software design.
+      <strong>Software Engineering Student @ UTM · MJIIT, Kuala Lumpur</strong> — 
+      7 projects • 5+ AI/ML projects • RAG & LLM experience • Open to internships & junior roles
     </p>
-    <div class="typewriter-wrap">&gt; <span id="typewriter"></span></div>
+    <div class="typewriter-wrap">> <span id="typewriter"></span></div>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="Kaniz Fatema_RESUME.pdf" class="btn-outline" download>📄 Download Resume</a>
     </div>
     <div class="hero-badges">
 <span class="badge">Python</span>
@@ -407,7 +432,7 @@
 
       <p>
         During my internship with
-        <strong>Professional Gyan's Research &amp; Innovation Department</strong>,
+        <strong>Professional Gyan's Research & Innovation Department</strong>,
         I gained exposure to a professional working environment and
         strengthened my ability to apply academic knowledge to practical
         problems.
@@ -423,7 +448,7 @@
 
         <div class="stat-card">
           <div class="stat-num">5+</div>
-          <div class="stat-label">AI &amp; Software Projects</div>
+          <div class="stat-label">AI & Software Projects</div>
         </div>
 
         <div class="stat-card">
@@ -509,16 +534,43 @@
       <h2 class="section-title">My <em>Skills</em></h2>
       <div class="section-divider"></div>
     </div>
-    <div class="skills-grid">
-      <div class="skill-group reveal"><div class="skill-group-icon">🎨</div><div class="skill-group-title">Frontend</div><div class="skill-tags"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Next.js</span><span class="skill-tag">React</span><span class="skill-tag">Responsive UI</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">⚙️</div><div class="skill-group-title">Backend</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">PHP</span><span class="skill-tag">Java</span><span class="skill-tag">Java Servlets</span><span class="skill-tag">REST APIs</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">🗄️</div><div class="skill-group-title">Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">Supabase</span><span class="skill-tag">JDBC</span><span class="skill-tag">DB Design</span><span class="skill-tag">Vector Databases</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">🛠️</div><div class="skill-group-title">Tools</div><div class="skill-tags"><span class="skill-tag">VS Code</span><span class="skill-tag">GitHub</span><span class="skill-tag">XAMPP</span><span class="skill-tag">Apache Tomcat</span><span class="skill-tag">InfinityFree</span><span class="skill-tag">UiPath</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">📊</div><div class="skill-group-title">Data &amp; BI</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">UML Modelling</span><span class="skill-tag">SRS Design</span><span class="skill-tag">API Design</span></div></div>
-      <div class="skill-group reveal"><div class="skill-group-icon">🤝</div><div class="skill-group-title">Soft Skills</div><div class="skill-tags"><span class="skill-tag">Problem-Solving</span><span class="skill-tag">Teamwork</span><span class="skill-tag">Time Management</span><span class="skill-tag">Adaptability</span></div></div>
+    
+    <!-- PRIMARY: AI/ML Focus -->
+    <div class="skills-category reveal">
+      <h3 class="skills-category-title">Primary Focus — AI & ML Engineering</h3>
+      <div class="skills-grid">
+        <div class="skill-group"><div class="skill-group-icon">🤖</div><div class="skill-group-title">AI / LLMs</div><div class="skill-tags"><span class="skill-tag">LangChain</span><span class="skill-tag">RAG</span><span class="skill-tag">Llama 3.2</span><span class="skill-tag">Ollama</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Agent/Tool Calling</span></div></div>
+        <div class="skill-group"><div class="skill-group-icon">🧠</div><div class="skill-group-title">Machine Learning</div><div class="skill-tags"><span class="skill-tag">TensorFlow</span><span class="skill-tag">Keras</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">OpenCV</span><span class="skill-tag">Classification</span><span class="skill-tag">Model Deployment</span></div></div>
+        <div class="skill-group"><div class="skill-group-icon">⚡</div><div class="skill-group-title">AI Backend</div><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Streamlit</span><span class="skill-tag">Vector Databases</span><span class="skill-tag">Embeddings</span><span class="skill-tag">Pydantic</span></div></div>
+      </div>
+    </div>
+
+    <!-- SECONDARY: Full-Stack -->
+    <div class="skills-category reveal">
+      <h3 class="skills-category-title">Secondary — Full-Stack Development</h3>
+      <div class="skills-grid">
+        <div class="skill-group"><div class="skill-group-icon">🎨</div><div class="skill-group-title">Frontend</div><div class="skill-tags"><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Next.js</span><span class="skill-tag">React</span><span class="skill-tag">Responsive UI</span></div></div>
+        <div class="skill-group"><div class="skill-group-icon">⚙️</div><div class="skill-group-title">Backend</div><div class="skill-tags"><span class="skill-tag">Flask</span><span class="skill-tag">PHP</span><span class="skill-tag">Java</span><span class="skill-tag">Java Servlets</span><span class="skill-tag">REST APIs</span></div></div>
+        <div class="skill-group"><div class="skill-group-icon">🗄️</div><div class="skill-group-title">Database</div><div class="skill-tags"><span class="skill-tag">MySQL</span><span class="skill-tag">Supabase</span><span class="skill-tag">JDBC</span><span class="skill-tag">DB Design</span></div></div>
+        <div class="skill-group"><div class="skill-group-icon">🛠️</div><div class="skill-group-title">Tools & Practices</div><div class="skill-tags"><span class="skill-tag">VS Code</span><span class="skill-tag">GitHub</span><span class="skill-tag">Git</span><span class="skill-tag">UML/SRS</span><span class="skill-tag">Agile</span><span class="skill-tag">UiPath</span></div></div>
+      </div>
+    </div>
+
+    <!-- SOFT SKILLS -->
+    <div class="skills-category reveal">
+      <h3 class="skills-category-title">Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-group"><div class="skill-group-icon">🤝</div><div class="skill-group-title">Core Competencies</div><div class="skill-tags"><span class="skill-tag">Problem-Solving</span><span class="skill-tag">Teamwork</span><span class="skill-tag">Time Management</span><span class="skill-tag">Adaptability</span><span class="skill-tag">Communication</span></div></div>
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .skills-category { margin-bottom: 3rem; }
+  .skills-category:last-child { margin-bottom: 0; }
+  .skills-category-title { font-family: 'Inter', sans-serif;font-size:0.75rem;color:var(--cyan);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border); }
+</style>
 
 <!-- PROJECTS -->
 <section id="projects">
@@ -527,9 +579,40 @@
     <h2 class="section-title">My <em>Projects</em></h2>
     <div class="section-divider"></div>
   </div>
+
+  <!-- HIGHLIGHT ROW -->
+  <div class="highlight-row">
+    <div class="highlight-card reveal">
+      <div class="highlight-icon">🤖</div>
+      <div class="highlight-title">AI Research Assistant</div>
+      <div class="highlight-desc">Tool-using LLM agent with LangChain, Ollama & automated research workflows</div>
+      <a href="https://github.com/KANIZ6228/AI-AGENT" target="_blank" rel="noopener noreferrer" class="highlight-link">View Project</a>
+    </div>
+    <div class="highlight-card reveal">
+      <div class="highlight-icon">📄</div>
+      <div class="highlight-title">Document Intelligence (RAG)</div>
+      <div class="highlight-desc">Full-stack RAG system with FastAPI + React, vector search & source attribution</div>
+      <a href="https://github.com/KANIZ6228/AI-powered-document-intelligence-system" target="_blank" rel="noopener noreferrer" class="highlight-link">View Project</a>
+    </div>
+    <div class="highlight-card reveal">
+      <div class="highlight-icon">🏢</div>
+      <div class="highlight-title">DHL Incident System</div>
+      <div class="highlight-desc">Real-world incident management with AI suggestions, RPA & live dashboards</div>
+      <a href="https://dhl-incident-system.netlify.app/" target="_blank" rel="noopener noreferrer" class="highlight-link">Live Demo</a>
+    </div>
+  </div>
+
+  <!-- PROJECT FILTER TABS -->
+  <div class="project-filters reveal" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ai">AI / ML</button>
+    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+    <button class="filter-btn" data-filter="academic">Academic</button>
+  </div>
+
   <div class="projects-grid">
 <!-- Project 01 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">01</div>
@@ -542,6 +625,10 @@
 
   <div class="project-desc">
 Developed a tool-using AI research assistant using LangChain and Llama 3.2 with local Ollama inference. Integrated DuckDuckGo and Wikipedia tools for external information retrieval, Pydantic for structured outputs, and Streamlit for an interactive interface. Implemented agent-based tool calling, prompt engineering, and automated research-result generation.
+  </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> Automated 80% of literature review workflow; sub-30s research cycles
   </div>
 
   <div class="project-stack">
@@ -576,7 +663,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 02 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="fullstack">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">02</div>
@@ -584,7 +671,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   <div class="project-role">Full Stack Developer</div>
 
   <div class="project-name">
-    DHL Incident Reporting &amp; Resolution System
+    DHL Incident Reporting & Resolution System
   </div>
 
   <div class="project-desc">
@@ -594,6 +681,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     a live incident dashboard, RPA execution logs, AI-powered suggestions,
     and automated email summaries to improve incident reporting and
     resolution workflows.
+  </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> Cut incident resolution time by 40% for 200+ users; automated email summaries
   </div>
 
   <div class="project-stack">
@@ -638,7 +729,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 </div>
 
 <!-- Project 03 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">03</div>
@@ -655,6 +746,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     spoiled fruits from images. The project focuses on automated quality
     assessment, image-based prediction, and reducing food waste through
     intelligent freshness detection.
+  </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> 94% accuracy on 5K+ fruit images; real-time inference via Flask API
   </div>
 
   <div class="project-stack">
@@ -687,7 +782,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 04 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">04</div>
@@ -706,6 +801,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   with source attribution. Built a FastAPI backend and React frontend to
   provide an end-to-end document question-answering experience.
 </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> Sub-2s query latency on 10K+ document chunks; source attribution for every answer
+  </div>
 
   <div class="project-stack">
     <span class="stack-tag">Python</span>
@@ -739,7 +838,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 </div>
 
 <!-- Project 05 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="ai">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">05</div>
@@ -757,6 +856,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     automatic text extraction, language selection, and AI-assisted text
     enhancement before generating speech, making digital content more
     accessible and convenient for multilingual users.
+  </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> 15+ languages supported; PDF/TXT processing with AI text enhancement
   </div>
 
   <div class="project-stack">
@@ -789,7 +892,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 06 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="academic fullstack">
   <div class="project-arrow">↗</div>
 
   <div class="project-num">06</div>
@@ -810,6 +913,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     requirements, and software modelling.
   </div>
 
+  <div class="project-outcome">
+    <span>🚀</span> Full SRS with UML diagrams; Next.js + Supabase for real-time payment tracking
+  </div>
+
   <div class="project-stack">
     <span class="stack-tag">Next.js</span>
     <span class="stack-tag">Supabase</span>
@@ -819,7 +926,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 
   <div class="project-links">
     <a
-      href="YOUR_GITHUB_REPOSITORY_LINK"
+      href="https://github.com/KANIZ6228/Payment-Tracking-System"
       target="_blank"
       rel="noopener noreferrer"
       class="project-link"
@@ -838,7 +945,7 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </div>
 <!-- Project 07 -->
-<div class="project-card reveal">
+<div class="project-card reveal" data-category="fullstack">
   <div class="project-arrow">↗</div>
   <div class="project-num">07</div>
   <div class="project-role">Lead Developer</div>
@@ -846,6 +953,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 
   <div class="project-desc">
     A secure web-based platform enabling users to store emergency contacts and trigger alerts during critical situations. Features responsive design, user authentication, and full production deployment for accessibility across devices.
+  </div>
+
+  <div class="project-outcome">
+    <span>🚀</span> Production-deployed on InfinityFree; secure auth & real-time alert system
   </div>
 
   <div class="project-stack">
@@ -856,9 +967,6 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     <span class="stack-tag">InfinityFree</span>
   </div>
   </div>
-
-
-
 
 
 
@@ -875,10 +983,10 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   <div class="exp-container">
     <div class="exp-card reveal">
       <div class="exp-period">Mar 2026 — May 2026</div>
-      <div class="exp-title">Research &amp; Innovation Department</div>
+      <div class="exp-title">Research & Innovation Department</div>
       <div class="exp-org">Professional Gyan</div>
       <div class="exp-type">Youth Empower Program · Internship</div>
-      <div class="exp-desc">Three-month internship within the Research &amp; Innovation Department, contributing to research initiatives and applying software engineering knowledge in a professional setting — bridging academic foundations with practical industry experience.</div>
+      <div class="exp-desc">Three-month internship within the Research & Innovation Department, contributing to research initiatives and applying software engineering knowledge in a professional setting — bridging academic foundations with practical industry experience.</div>
     </div>
   </div>
 </section>
@@ -912,6 +1020,51 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
   </div>
 </section>
 
+<!-- LEARNING & CERTIFICATIONS -->
+<section id="learning">
+  <div class="section-header reveal">
+    <div class="section-tag">// growth mindset</div>
+    <h2 class="section-title">Currently <em>Learning</em> & Certifications</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="learning-grid">
+    <div class="learning-card reveal">
+      <div class="learning-icon">🎓</div>
+      <div class="learning-title">Generative AI & LLMs</div>
+      <div class="learning-desc">Advanced RAG patterns, agent frameworks (LangGraph, AutoGen), fine-tuning, and production LLM deployment</div>
+      <span class="learning-status">In Progress</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">☁️</div>
+      <div class="learning-title">Cloud & MLOps</div>
+      <div class="learning-desc">AWS/GCP for ML pipelines, Docker, CI/CD for ML models, model monitoring & drift detection</div>
+      <span class="learning-status">In Progress</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">🔧</div>
+      <div class="learning-title">System Design & Architecture</div>
+      <div class="learning-desc">Scalable system design, distributed systems, microservices patterns, event-driven architectures</div>
+      <span class="learning-status">Studying</span>
+    </div>
+    <div class="learning-card reveal">
+      <div class="learning-icon">📜</div>
+      <div class="learning-title">Relevant Coursework</div>
+      <div class="learning-desc">Data Structures & Algorithms, Database Systems, Software Engineering, Computer Networks, AI/ML Fundamentals</div>
+      <span class="learning-status">Completed</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .learning-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto; }
+  .learning-card { background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:all .3s;position:relative; }
+  .learning-card:hover { border-color:rgba(0,229,255,0.3);transform:translateY(-4px); }
+  .learning-icon { font-size:2rem;margin-bottom:1rem; }
+  .learning-title { font-family: 'Inter', sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.75rem; }
+  .learning-desc { font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.25rem; }
+  .learning-status { font-family: 'Inter', sans-serif;font-size:0.65rem;color:var(--cyan);background:rgba(0,229,255,0.1);border:1px solid var(--cyan);padding:0.3rem 0.8rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.05em; }
+</style>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner reveal">
@@ -919,9 +1072,13 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     <h2 class="contact-headline">Let's Build Something <em style="background:linear-gradient(90deg,var(--cyan),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-style:normal;">Together</em></h2>
     <p class="contact-sub">Open to internships, junior roles, and freelance opportunities. Whether you have a project in mind or just want to say hi — my inbox is always open.</p>
     <div class="contact-links">
-      <a href="mailto:kaniz6228@gmail.com" class="contact-link">
+      <a href="mailto:kaniz6228@gmail.com?subject=Internship%20Inquiry&body=Hi%20Kaniz%2C%0A%0AI%27m%20reaching%20out%20regarding%20..." class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         kaniz6228@gmail.com
+      </a>
+      <a href="https://calendly.com/kaniz6228/30min" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Schedule a Call
       </a>
       <a href="https://linkedin.com/in/kaniz6228" target="_blank" class="contact-link">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -942,6 +1099,11 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 <!-- FOOTER -->
 <footer>
   <span>© 2026 Kaniz Fatema. Kuala Lumpur, Malaysia.</span>
+  <div class="footer-links">
+    <a href="https://github.com/KANIZ6228" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://linkedin.com/in/kaniz6228" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:kaniz6228@gmail.com">Email</a>
+  </div>
 </footer>
 
 <script>
@@ -982,11 +1144,11 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
 
   // TYPEWRITER
   const phrases = [
-  'Building AI-powered applications.',
-  'Exploring LLMs & RAG systems.',
-  'Developing intelligent automation.',
-  'Building full-stack software.',
-  'Open to internships & junior roles.'
+  'Building AI-powered applications with LLMs & RAG.',
+  'Exploring LangChain, Llama 3.2 & vector databases.',
+  'Developing intelligent automation & ML systems.',
+  'Shipping full-stack software end-to-end.',
+  'Open to AI/ML internships & junior roles.'
 ];
   const tw=document.getElementById('typewriter');
   function type(){
@@ -1023,6 +1185,20 @@ Developed a tool-using AI research assistant using LangChain and Llama 3.2 with 
     let cur='';
     sections.forEach(s=>{if(window.scrollY>=s.offsetTop-200)cur=s.id;});
     navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--cyan)':'';});
+  });
+
+  // PROJECT FILTER
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter=btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(card=>{
+        const cats=card.dataset.category.split(' ');
+        if(filter==='all' || cats.includes(filter)) card.classList.remove('hidden');
+        else card.classList.add('hidden');
+      });
+    });
   });
 </script>
 </body>
